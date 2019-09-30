@@ -1,1 +1,33 @@
-<p>table works!</p>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Select </th>
+
+      <th *ngFor="let itemAttribute of itemAttributes; index as i">
+        {{ itemAttribute }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of getItemList(); index as i">
+      <td>
+          <input type="radio" name="" id="item" [class.selected]="item === selectedItem" (click)="onSelect(item)">
+      </td>
+      <td *ngFor="let atribute of itemAttributes; index as a">{{item[atribute]}}<td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+  </ngb-pagination>
+
+  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <option [ngValue]="2">2 items per page</option>
+    <option [ngValue]="4">4 items per page</option>
+    <option [ngValue]="6">6 items per page</option>
+  </select>
+</div>
+
