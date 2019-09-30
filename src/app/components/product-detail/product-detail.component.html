@@ -1,16 +1,39 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <form>
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="id">
+<div class="container card" >
+  <div class="row ">
+    <div class="col" style="padding: 30px;">
+      <div>
+        <div class="form-row">
+          <div class="col-md-2 mb-3">
+            <label for="validationDefault01">Id</label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="id" value={{item.id}} readonly required>
           </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="name">
+          <div class="col-md-10 mb-3">
+            <label for="validationDefault02">Name</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Name" [(ngModel)]="item.name" required>
           </div>
         </div>
-      </form>
+        <div class="form-row">
+          <div class="col-md-12 mb-3">
+            <label for="validationDefaultUsername">Flag</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend2"></span>
+              </div>
+              <input type="text" class="form-control" id="validationDefaultUsername"
+                      placeholder="Flag" aria-describedby="inputGroupPrepend2"
+                      [(ngModel)]="item.flag" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6">
+      <button class="btn btn-danger btn-block" type="" >Cancel</button>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary btn-block" type="">Save</button>
     </div>
   </div>
 </div>

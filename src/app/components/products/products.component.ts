@@ -9,9 +9,18 @@ import { Item } from 'src/app/core/item';
 export class ProductsComponent implements OnInit {
 
   itemList: Item[];
+  selectedItem: Item;
 
   constructor() {
     this.itemList = ITEM_LIST;
+    this.selectedItem = {
+      id: 100,
+      name: 'test 100',
+      flag: 'test flag',
+      area: 4242,
+      population: 484848
+
+    }
   }
 
   ngOnInit() {
