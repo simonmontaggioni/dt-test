@@ -42,11 +42,9 @@ export class ProductService {
 
   updateItem(item: Item) {
     console.log('update item service: item -', item);
-    const index = this.getItemList().findIndex( x => x.id === item.id );
-
-    // this.getItemList()[index].name = item.name;
-    // this.getItemList()[index].flag = item.flag;
-    // console.log('update item service: ', searchItem);
+    const itemIndex = this.itemList.findIndex(fitem => fitem.id === item.id);
+    this.itemList[itemIndex] = item;
+    console.log('update item service: ', itemIndex);
   }
 
   getItemType() {

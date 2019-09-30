@@ -23,8 +23,12 @@ export class ProductsComponent implements OnInit {
     this.action = '';
   }
 
-  createProduct(item: Item) {
+  createItem(item: Item) {
     this.productService.addItem(item);
+  }
+
+  updateItem(item: Item) {
+    this.productService.updateItem(item);
   }
 
   onSelect(item: Item) {
@@ -41,9 +45,9 @@ export class ProductsComponent implements OnInit {
   saveItem(item: Item) {
     // this.productService.updateItem(item);
     if (this.action === 'create') {
-      this.createProduct(item);
+      this.createItem(item);
     } else if ( this.action === 'edit') {
-
+      this.updateItem(item);
     }
     this.setAction('');
   }
