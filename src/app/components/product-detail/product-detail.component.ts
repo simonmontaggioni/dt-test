@@ -9,7 +9,6 @@ import { Item } from 'src/app/core/item';
 export class ProductDetailComponent implements OnInit {
 
   @Input() item: Item;
-  @Input() itemType: Item;
 
   @Output() savedItemEvent = new EventEmitter<Item>();
   @Output() cancelEvent = new EventEmitter<string>();
@@ -19,7 +18,6 @@ export class ProductDetailComponent implements OnInit {
   constructor() {  }
 
   ngOnInit() {
-    const item = this.itemType;
     this.itemAttributes = Object.keys(this.item);
     console.log('items attributes: ', this.itemAttributes);
   }
