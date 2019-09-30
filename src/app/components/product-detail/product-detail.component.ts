@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Item } from 'src/app/core/item';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,9 +7,9 @@ import { Item } from 'src/app/core/item';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() item: Item;
+  @Input() item: any;
 
-  @Output() savedItemEvent = new EventEmitter<Item>();
+  @Output() savedItemEvent = new EventEmitter<any>();
   @Output() cancelEvent = new EventEmitter<string>();
 
    itemAttributes: any[];
@@ -35,8 +34,8 @@ export class ProductDetailComponent implements OnInit {
     this.cancelEvent.emit('cancel');
   }
 
-  getItemAttributes(item: Item) {
-    this.itemAttributes = Object.keys(item) as Array<keyof Item>;
+  getItemAttributes(item: any) {
+    this.itemAttributes = Object.keys(item) as Array<keyof any>;
     console.log(this.itemAttributes);
   }
 
