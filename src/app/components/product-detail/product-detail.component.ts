@@ -8,20 +8,23 @@ import { Item } from 'src/app/core/item';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input()
-   item: Item;
+  @Input() item: Item;
+  @Input() itemType: Item;
 
-  @Output()
-   savedItemEvent = new EventEmitter<Item>();
-  @Output()
-   cancelEvent = new EventEmitter<string>();
+  @Output() savedItemEvent = new EventEmitter<Item>();
+  @Output() cancelEvent = new EventEmitter<string>();
 
-  constructor() { }
+   itemAttributes: any[];
+
+  constructor() {  }
 
   ngOnInit() {
+    const item = this.itemType;
+    this.itemAttributes = Object.keys(this.item);
+    console.log('items attributes: ', this.itemAttributes);
   }
 
-  onSaveItem(){
+  onSaveItem() {
     this.onItemSaved();
   }
 
@@ -32,6 +35,11 @@ export class ProductDetailComponent implements OnInit {
   onCancel() {
     console.log('CANCELED');
     this.cancelEvent.emit('cancel');
+  }
+
+  getItemAttributes(item: Item) {
+    this.itemAttributes = Object.keys(item) as Array<keyof Item>;
+    console.log(this.itemAttributes);
   }
 
 }

@@ -10,10 +10,12 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductsComponent implements OnInit {
 
   itemList: Item[];
+  itemType: Item;
   selectedItem: Item;
   action: string;
 
   constructor(private productService: ProductService) {
+    this.itemType = productService.getItemType();
     this.itemList = productService.getItemList();
     this.selectedItem = productService.getSelectedItem();
     this.action = '';

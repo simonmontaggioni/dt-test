@@ -9,6 +9,7 @@ import { Item } from 'src/app/core/item';
 export class TableComponent implements OnInit {
 
   @Input() itemList: Item[];
+  @Input() itemType: Item;
   @Output() selectedItemEvent = new EventEmitter<Item>();
 
   page: number;
@@ -19,14 +20,7 @@ export class TableComponent implements OnInit {
   itemAttributes: any[];
 
   constructor() {
-    const item = {
-      id: 5,
-      name: 'tes',
-      flag: 'france',
-      area: '42342342',
-      population: 43
-    };
-    this.itemAttributes = Object.keys(item);
+
    }
 
   ngOnInit() {
@@ -34,6 +28,8 @@ export class TableComponent implements OnInit {
     this.pageSize = 6;
     this.collectionSize = this.itemList.length;
     console.log( 'items list', this.itemList);
+    const item = this.itemType;
+    this.itemAttributes = Object.keys(item);
   }
 
   getItemList(): Item[] {

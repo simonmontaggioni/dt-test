@@ -48,4 +48,9 @@ export class ProductService {
     // this.getItemList()[index].flag = item.flag;
     // console.log('update item service: ', searchItem);
   }
+
+  getItemType() {
+    const item = { id: 0, name: '', flag: '', population: 0 , area: 0};
+    return item;
+  }
 }

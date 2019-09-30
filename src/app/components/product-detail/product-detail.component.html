@@ -1,33 +1,20 @@
 <div class="container card" >
   <div class="row ">
     <div class="col" style="padding: 30px;">
-      <div>
         <div class="form-row">
           <div class="col-md-2 mb-3">
             <label for="validationDefault01">Id</label>
             <input type="text" class="form-control" id="validationDefault01" placeholder="" value={{item.id}} readonly>
-          </div>
-          <div class="col-md-10 mb-3">
-            <label for="validationDefault02">Name</label>
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Name" [(ngModel)]="item.name" required>
-          </div>
+           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationDefaultUsername">Flag</label>
-            <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Flag" aria-describedby="inputGroupPrepend2"
-                      [(ngModel)]="item.flag" required>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault02">Area</label>
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Area" [(ngModel)]="item.area" required>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault02">Population</label>
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Population" [(ngModel)]="item.population" required>
-          </div>
+          <ng-container  *ngFor="let attribute of itemAttributes; index as i">
+            <div class="col-md-6 mb-3" *ngIf="attribute !== 'id'">
+              <label for="validationDefault01">{{ attribute }}</label>
+              <input type="text" class="form-control" id="validationDefault01" placeholder="" [(ngModel)]="item[attribute]">
+            </div>
+          </ng-container>
         </div>
-      </div>
     </div>
   </div>
   <div class="form-row">
