@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { SelectionBarComponent } from './components/selection-bar/selection-bar.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { ProductsComponent } from './components/products/products.component';
     AppComponent,
     TableComponent,
     SelectionBarComponent,
-    ProductDetailComponent,
+    ItemDetailComponent,
     ProductsComponent
   ],
   imports: [

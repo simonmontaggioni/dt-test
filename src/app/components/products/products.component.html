@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-4"></div>
     <div class="col-8" *ngIf="action === 'create' || (action === 'edit' && selectedItem.id) ">
-        <app-product-detail [item]="selectedItem" (cancelEvent)="cancelOperation($event)" (savedItemEvent)="saveItem($event)"></app-product-detail>
+        <app-item-detail [item]="selectedItem" (cancelEvent)="cancelOperation($event)" (savedItemEvent)="saveItem($event)"></app-item-detail>
     </div>
   </div>
 </div>
