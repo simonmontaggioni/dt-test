@@ -2,8 +2,8 @@
 <div class="container"  style="padding-bottom: 30px">
   <div class="row">
     <div class="col-4"></div>
-    <div class="col-8" *ngIf="action === 'create' || action === 'edit' ">
-        <app-product-detail [item]="selectedItem"  (savedItemEvent)="saveItem($event)"></app-product-detail>
+    <div class="col-8" *ngIf="action === 'create' || (action === 'edit' && selectedItem.id) ">
+        <app-product-detail [item]="selectedItem" (cancelEvent)="cancelOperation($event)" (savedItemEvent)="saveItem($event)"></app-product-detail>
     </div>
   </div>
 </div>

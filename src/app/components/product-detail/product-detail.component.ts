@@ -11,19 +11,27 @@ export class ProductDetailComponent implements OnInit {
   @Input()
    item: Item;
 
-  @Output() savedItemEvent = new EventEmitter<Item>();
+  @Output()
+   savedItemEvent = new EventEmitter<Item>();
+  @Output()
+   cancelEvent = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  saveItem(){
+  onSaveItem(){
     this.onItemSaved();
   }
 
   onItemSaved() {
     this.savedItemEvent.emit(this.item);
+  }
+
+  onCancel() {
+    console.log('CANCELED');
+    this.cancelEvent.emit('cancel');
   }
 
 }

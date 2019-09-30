@@ -5,7 +5,7 @@
         <div class="form-row">
           <div class="col-md-2 mb-3">
             <label for="validationDefault01">Id</label>
-            <input type="text" class="form-control" id="validationDefault01" placeholder="id" value={{item.id}} readonly required>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="" value={{item.id}} readonly>
           </div>
           <div class="col-md-10 mb-3">
             <label for="validationDefault02">Name</label>
@@ -32,10 +32,10 @@
   </div>
   <div class="form-row">
     <div class="col-md-6">
-      <button class="btn btn-danger btn-block" type="" >Cancel</button>
+      <button class="btn btn-danger btn-block" (click)="onCancel()" >Cancel</button>
     </div>
     <div class="col-md-6">
-      <button class="btn btn-primary btn-block" (click)="saveItem()">Save</button>
+      <button class="btn btn-primary btn-block" (click)="onSaveItem()">Save</button>
     </div>
   </div>
 </div>
