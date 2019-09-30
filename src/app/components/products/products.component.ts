@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITEM_LIST } from 'src/app/core/mock-item-list';
 import { Item } from 'src/app/core/item';
+import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -11,32 +12,21 @@ export class ProductsComponent implements OnInit {
   itemList: Item[];
   selectedItem: Item;
 
-  constructor() {
-    this.itemList = ITEM_LIST;
-    this.selectedItem = {
-      id: 100,
-      name: 'test 100',
-      flag: 'test flag',
-      area: 4242,
-      population: 484848
-
-    }
+  constructor(private productService: ProductService) {
+    this.itemList = productService.getItemList();
+    this.selectedItem = productService.getSelectedItem();
   }
 
   ngOnInit() {
   }
 
   createProduct() {
-    this.itemList.push({
-      id: 45,
+    this.productService.addItem({
       name: 'test',
       flag: 'test flag',
       area: 4242,
       population: 484848
-
     });
-
-    console.log(this.itemList);
   }
 
 }
