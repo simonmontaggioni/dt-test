@@ -36,6 +36,7 @@ export class TableComponent implements OnInit {
   }
 
   getItemList(): Item[] {
+    this.collectionSize = this.itemList.length;
     return this.itemList
       .map((item, i) => ({id: i + 1, ...item}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);

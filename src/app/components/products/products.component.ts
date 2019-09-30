@@ -17,4 +17,17 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
   }
 
+  createProduct() {
+    this.itemList.push({
+      id: 45,
+      name: 'test',
+      flag: 'test flag',
+      area: 4242,
+      population: 484848
+
+    });
+
+    console.log(this.itemList);
+  }
+
 }
