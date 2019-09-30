@@ -34,9 +34,15 @@ export class ProductService {
       population: 0
     };
 
-    if(this.selectedItem){
+    if (this.selectedItem) {
       item = this.selectedItem;
     }
     return item;
+  }
+
+  updateItem(item: Item) {
+    console.log('update item service: item -', item);
+    // const searchItem = this.getItemList().filter(x => x.id === 3)[0];
+    // console.log('update item service: ', searchItem);
   }
 }

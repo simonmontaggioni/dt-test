@@ -11,10 +11,13 @@ export class ProductsComponent implements OnInit {
 
   itemList: Item[];
   selectedItem: Item;
+  editItem: boolean;
+  createItem: boolean;
 
   constructor(private productService: ProductService) {
     this.itemList = productService.getItemList();
     this.selectedItem = productService.getSelectedItem();
+    this.editItem = false;
   }
 
   ngOnInit() {
@@ -32,6 +35,19 @@ export class ProductsComponent implements OnInit {
   updateSeletedItem(item: Item) {
     this.productService.setSelectedItem(item);
     this.selectedItem = this.productService.getSelectedItem();
+  }
+
+  saveItem(item: Item) {
+
+    this.productService.updateItem(item);
+  }
+
+  toogleEdit() {
+    this.editItem = !this.editItem;
+  }
+
+  toogleCreate() {
+    this.createItem = !this.createItem;
   }
 
 }

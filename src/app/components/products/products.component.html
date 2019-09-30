@@ -2,8 +2,8 @@
 <div class="container"  style="padding-bottom: 30px">
   <div class="row">
     <div class="col-4"></div>
-    <div class="col-8">
-        <app-product-detail [item]="selectedItem"></app-product-detail>
+    <div class="col-8" *ngIf="editItem || createItem ">
+        <app-product-detail [item]="selectedItem" (savedItemEvent)="saveItem($event)"></app-product-detail>
     </div>
   </div>
 </div>
@@ -13,10 +13,10 @@
     <div class="col-4">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
-          <button type="button" class="btn btn-primary btn-block" (click)="createProduct()">Create</button>
+          <button type="button" class="btn btn-primary btn-block" (click)="toggleCreate()">Create</button>
         </div>
         <div class="btn-group mr-2" role="group" aria-label="Second group">
-          <button type="button" class="btn btn-secondary btn-block">Edit </button>
+          <button type="button" class="btn btn-secondary btn-block" (click)="toogleEdit()">Edit </button>
         </div>
         <div class="btn-group mr-2" role="group" aria-label="Third group">
           <button type="button" class="btn btn-danger btn-block">Delete</button>
