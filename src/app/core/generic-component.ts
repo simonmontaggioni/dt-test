@@ -1,3 +1,5 @@
+import { GenericService } from '../services/generic.service';
+
 export class GenericComponent {
 
 
@@ -6,9 +8,8 @@ export class GenericComponent {
   selectedItem: any;
   action: string;
   emptyItem: any;
-  itemService: any;
 
-  constructor() {  }
+  constructor(public itemService: GenericService) {  }
 
   createItem(item: any) {
     this.itemService.addItem(item);

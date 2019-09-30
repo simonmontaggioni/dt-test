@@ -10,17 +10,14 @@ import { GenericComponent } from 'src/app/core/generic-component';
 })
 export class ProvidersComponent extends GenericComponent implements OnInit {
 
-
-
-  constructor(public productService: ProviderService) {
-    super();
-    this.productService = productService;
+  constructor(public providerService: ProviderService) {
+    super(providerService);
   }
 
   ngOnInit() {
-    this.itemType = this.productService.getItemType();
-    this.itemList = this.productService.getItemList();
-    this.selectedItem = this.productService.getSelectedItem();
+    this.itemType = this.providerService.getItemType();
+    this.itemList = this.providerService.getItemList();
+    this.selectedItem = this.providerService.getSelectedItem();
     this.emptyItem =  { name: null, type: null,  code: null , country: null };
     this.action = '';
   }
