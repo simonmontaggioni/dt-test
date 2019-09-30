@@ -43,14 +43,21 @@ export class ProductsComponent implements OnInit {
 
   cancelOperation(action: string) {
     this.setAction(action);
+    const item = { name: '', flag: '', population: 0 , area: 0};
+    this.updateSeletedItem(item);
   }
 
   setAction(action: string) {
     this.action = action;
     if (this.action === 'create') {
-      this.selectedItem = { name: '', flag: '', population: 0 , area: 0};
+
+      const item = { name: '', flag: '', population: 0 , area: 0};
+      this.updateSeletedItem(item);
+
     } else if (this.action === 'edit') {
+
       this.selectedItem = this.productService.getSelectedItem();
+
     }
   }
 
