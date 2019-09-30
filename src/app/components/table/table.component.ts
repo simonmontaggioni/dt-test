@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Item } from 'src/app/core/item';
 
 @Component({
   selector: 'app-table',
@@ -8,15 +7,15 @@ import { Item } from 'src/app/core/item';
 })
 export class TableComponent implements OnInit {
 
-  @Input() itemList: Item[];
-  @Input() itemType: Item;
-  @Output() selectedItemEvent = new EventEmitter<Item>();
+  @Input() itemList: any[];
+  @Input() itemType: any;
+  @Output() selectedItemEvent = new EventEmitter<any>();
 
   page: number;
   pageSize: number;
   collectionSize: number;
 
-  selectedItem: Item;
+  selectedItem: any;
   itemAttributes: any[];
 
   constructor() {
@@ -32,19 +31,19 @@ export class TableComponent implements OnInit {
     this.itemAttributes = Object.keys(item);
   }
 
-  getItemList(): Item[] {
+  getItemList(): any[] {
     this.collectionSize = this.itemList.length;
     return this.itemList
       .map((item, i) => ({id: i + 1, ...item}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
-  getItemAttributes(item: Item) {
-    this.itemAttributes = Object.keys(item) as Array<keyof Item>;
+  getItemAttributes(item: any) {
+    this.itemAttributes = Object.keys(item) as Array<keyof any>;
     console.log(this.itemAttributes);
   }
 
-  onSelect(item: Item): void {
+  onSelect(item: any): void {
     this.selectedItem = item;
     this.selectedItemEvent.emit(this.selectedItem);
     console.log('selected item: ', this.selectedItem);
