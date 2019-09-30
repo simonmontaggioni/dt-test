@@ -8,7 +8,9 @@ import { Item } from 'src/app/core/item';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() item: Item;
+  @Input()
+   item: Item;
+
   @Output() savedItemEvent = new EventEmitter<Item>();
 
   constructor() { }

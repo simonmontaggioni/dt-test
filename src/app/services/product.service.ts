@@ -42,7 +42,10 @@ export class ProductService {
 
   updateItem(item: Item) {
     console.log('update item service: item -', item);
-    // const searchItem = this.getItemList().filter(x => x.id === 3)[0];
+    const index = this.getItemList().findIndex( x => x.id === item.id );
+
+    // this.getItemList()[index].name = item.name;
+    // this.getItemList()[index].flag = item.flag;
     // console.log('update item service: ', searchItem);
   }
 }

@@ -13,16 +13,18 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-12 mb-3">
+          <div class="col-md-6 mb-3">
             <label for="validationDefaultUsername">Flag</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupPrepend2"></span>
-              </div>
-              <input type="text" class="form-control" id="validationDefaultUsername"
-                      placeholder="Flag" aria-describedby="inputGroupPrepend2"
+            <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Flag" aria-describedby="inputGroupPrepend2"
                       [(ngModel)]="item.flag" required>
-            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault02">Area</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Area" [(ngModel)]="item.area" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault02">Population</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Population" [(ngModel)]="item.population" required>
           </div>
         </div>
       </div>

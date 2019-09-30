@@ -11,25 +11,19 @@ export class ProductsComponent implements OnInit {
 
   itemList: Item[];
   selectedItem: Item;
-  editItem: boolean;
-  createItem: boolean;
+  action: string;
 
   constructor(private productService: ProductService) {
     this.itemList = productService.getItemList();
     this.selectedItem = productService.getSelectedItem();
-    this.editItem = false;
+    this.action = '';
   }
 
   ngOnInit() {
   }
 
-  createProduct() {
-    this.productService.addItem({
-      name: 'test',
-      flag: 'test flag',
-      area: 4242,
-      population: 484848
-    });
+  createProduct(item: Item) {
+    this.productService.addItem(item);
   }
 
   updateSeletedItem(item: Item) {
@@ -38,16 +32,15 @@ export class ProductsComponent implements OnInit {
   }
 
   saveItem(item: Item) {
-
     this.productService.updateItem(item);
+    if (this.action === 'create') {
+      this.createProduct(item);
+    }
+    this.setAction('');
   }
 
-  toogleEdit() {
-    this.editItem = !this.editItem;
-  }
-
-  toogleCreate() {
-    this.createItem = !this.createItem;
+  setAction(action: string) {
+    this.action = action;
   }
 
 }
