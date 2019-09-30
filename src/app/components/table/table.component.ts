@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Item } from 'src/app/core/item';
 
 @Component({
@@ -9,6 +9,7 @@ import { Item } from 'src/app/core/item';
 export class TableComponent implements OnInit {
 
   @Input() itemList: Item[];
+  @Output() selectedItemEvent = new EventEmitter<Item>();
 
   page: number;
   pageSize: number;
@@ -49,7 +50,12 @@ export class TableComponent implements OnInit {
 
   onSelect(item: Item): void {
     this.selectedItem = item;
-    console.log(this.selectedItem);
+    this.selectedItemEvent.emit(this.selectedItem);
+    console.log('selected item: ', this.selectedItem);
+  }
+
+  onItemSelected() {
+    this.selectedItemEvent.emit(this.selectedItem);
   }
 
 }

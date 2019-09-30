@@ -29,4 +29,9 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  updateSeletedItem(item: Item) {
+    this.productService.setSelectedItem(item);
+    this.selectedItem = this.productService.getSelectedItem();
+  }
+
 }
