@@ -49,7 +49,7 @@ export class ProductsComponent implements OnInit {
   }
 
   cancelOperation(action: string) {
-    this.setAction(action);
+    this.setAction('');
     const item = this.emptyItem;
     this.updateSeletedItem(item);
   }
