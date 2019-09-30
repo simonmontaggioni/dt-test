@@ -11,6 +11,7 @@ import { TableComponent } from './components/table/table.component';
 import { SelectionBarComponent } from './components/selection-bar/selection-bar.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProvidersComponent } from './components/providers/providers.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductsComponent } from './components/products/products.component';
     TableComponent,
     SelectionBarComponent,
     ItemDetailComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProvidersComponent
   ],
   imports: [
     BrowserModule,

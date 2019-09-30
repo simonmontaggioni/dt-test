@@ -1,53 +1,55 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/core/item';
-import { GenericService } from 'src/app/services/generic.service';
+import { Provider } from 'src/app/core/provider';
+import { ProviderService } from 'src/app/services/provider.service';
+
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-providers',
+  templateUrl: './providers.component.html',
+  styleUrls: ['./providers.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProvidersComponent implements OnInit {
 
-  itemList: Item[];
-  itemType: Item;
-  selectedItem: Item;
+  itemList: Provider[];
+  itemType: Provider;
+  selectedItem: Provider;
   action: string;
-  emptyItem =  { name: null, flag: null,  population: null , area: null };
+  emptyItem: any;
 
-  constructor(private productService: GenericService) {  }
+  constructor(private productService: ProviderService) {  }
 
   ngOnInit() {
     this.itemType = this.productService.getItemType();
     this.itemList = this.productService.getItemList();
     this.selectedItem = this.productService.getSelectedItem();
+    this.emptyItem =  { name: null, type: null,  code: null , country: null };
     this.action = '';
   }
 
-  createItem(item: Item) {
+  createItem(item: Provider) {
     this.productService.addItem(item);
   }
 
-  updateItem(item: Item) {
+  updateItem(item: Provider) {
     this.productService.updateItem(item);
   }
 
-  deleteItem(item: Item) {
+  deleteItem(item: Provider) {
     alert('Are you sure to delete item id: ' + item.id);
     this.productService.deleteItem(item);
   }
 
-  onSelect(item: Item) {
+  onSelect(item: Provider) {
     if (this.action === 'edit' || this.action === '') {
       this.updateSeletedItem(item);
     }
   }
 
-  updateSeletedItem(item: Item) {
+  updateSeletedItem(item: Provider) {
       this.productService.setSelectedItem(item);
       this.selectedItem = this.productService.getSelectedItem();
   }
 
-  saveItem(item: Item) {
+  saveItem(item: Provider) {
     if (this.action === 'create') {
       this.createItem(item);
     } else if ( this.action === 'edit') {

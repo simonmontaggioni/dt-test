@@ -1,38 +1,36 @@
 import { Injectable } from '@angular/core';
 import { ITEM_LIST } from 'src/app/core/mock-item-list';
-import { Item } from 'src/app/core/item';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class GenericService {
 
-  itemList = ITEM_LIST;
-  selectedItem: Item;
+  itemList: any[];
+  selectedItem: any;
+  emptyItem: any;
 
-  constructor() { }
+  constructor() {
+    this.itemList = ITEM_LIST;
+    this.emptyItem =  { name: null, flag: null,  population: null , area: null };
+  }
 
   getItemList() {
     return this.itemList;
   }
 
-  addItem( item: Item) {
+  addItem( item: any) {
     item.id = this.itemList.length + 1;
     this.itemList.push(item);
     console.log('prodcut service add item: ', this.itemList);
   }
 
-  setSelectedItem(item: Item) {
+  setSelectedItem(item: any) {
     this.selectedItem = item;
   }
 
   getSelectedItem() {
-    let item = {
-      name: '',
-      flag: '',
-      area: '',
-      population: ''
-    };
+    let item = this.emptyItem;
 
     if (this.selectedItem) {
       item = this.selectedItem;
@@ -40,7 +38,7 @@ export class ProductService {
     return item;
   }
 
-  updateItem(item: Item) {
+  updateItem(item: any) {
     console.log('update item service: item -', item);
     const itemIndex = this.itemList.findIndex(fitem => fitem.id === item.id);
     this.itemList[itemIndex] = item;
@@ -48,7 +46,7 @@ export class ProductService {
   }
 
 
-  deleteItem(item: Item) {
+  deleteItem(item: any) {
     console.log('delete item service: item -', item);
     if ( this.itemList.filter(fitem => fitem.id === item.id )){
       this.itemList.splice(this.itemList.findIndex(x => x.id === item.id), 1);
@@ -57,7 +55,7 @@ export class ProductService {
   }
 
   getItemType() {
-    const item = { id: 0, name: '', flag: '', population: '' , area: ''};
+    const item = this.emptyItem;
     return item;
   }
 }
