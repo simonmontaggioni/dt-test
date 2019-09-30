@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ITEM_LIST } from 'src/app/core/mock-item-list';
 import { Item } from 'src/app/core/item';
 import { ProductService } from 'src/app/services/product.service';
 @Component({
