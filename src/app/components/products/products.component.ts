@@ -14,23 +14,28 @@ export class ProductsComponent implements OnInit {
   selectedItem: Item;
   action: string;
 
-  constructor(private productService: ProductService) {
-    this.itemType = productService.getItemType();
-    this.itemList = productService.getItemList();
-    this.selectedItem = productService.getSelectedItem();
-    this.action = '';
-  }
+  constructor(private productService: ProductService) {  }
 
   ngOnInit() {
+    this.itemType = this.productService.getItemType();
+    this.itemList = this.productService.getItemList();
+    this.selectedItem = this.productService.getSelectedItem();
+    this.action = '';
   }
 
   createProduct(item: Item) {
     this.productService.addItem(item);
   }
 
+  onSelect(item: Item){
+    if (this.action === 'edit') {
+      this.updateSeletedItem(item);
+    }
+  }
+
   updateSeletedItem(item: Item) {
-    this.productService.setSelectedItem(item);
-    this.selectedItem = this.productService.getSelectedItem();
+      this.productService.setSelectedItem(item);
+      this.selectedItem = this.productService.getSelectedItem();
   }
 
   saveItem(item: Item) {
