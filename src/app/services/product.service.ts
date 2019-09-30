@@ -30,8 +30,8 @@ export class ProductService {
     let item = {
       name: '',
       flag: '',
-      area: 0,
-      population: 0
+      area: '',
+      population: ''
     };
 
     if (this.selectedItem) {
@@ -50,7 +50,7 @@ export class ProductService {
   }
 
   getItemType() {
-    const item = { id: 0, name: '', flag: '', population: 0 , area: 0};
+    const item = { id: 0, name: '', flag: '', population: '' , area: ''};
     return item;
   }
 }

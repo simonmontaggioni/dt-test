@@ -12,6 +12,7 @@ export class ProductsComponent implements OnInit {
   itemType: Item;
   selectedItem: Item;
   action: string;
+  emptyItem =  { name: null, flag: null,  population: null , area: null };
 
   constructor(private productService: ProductService) {  }
 
@@ -26,8 +27,8 @@ export class ProductsComponent implements OnInit {
     this.productService.addItem(item);
   }
 
-  onSelect(item: Item){
-    if (this.action === 'edit') {
+  onSelect(item: Item) {
+    if (this.action === 'edit' || this.action === '') {
       this.updateSeletedItem(item);
     }
   }
@@ -49,7 +50,7 @@ export class ProductsComponent implements OnInit {
 
   cancelOperation(action: string) {
     this.setAction(action);
-    const item = { name: '', flag: '', population: 0 , area: 0};
+    const item = this.emptyItem;
     this.updateSeletedItem(item);
   }
 
@@ -57,7 +58,7 @@ export class ProductsComponent implements OnInit {
     this.action = action;
     if (this.action === 'create') {
 
-      const item = { name: '', flag: '', population: 0 , area: 0};
+      const item = this.emptyItem;
       this.updateSeletedItem(item);
 
     } else if (this.action === 'edit') {
