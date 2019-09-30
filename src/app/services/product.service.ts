@@ -47,6 +47,15 @@ export class ProductService {
     console.log('update item service: ', itemIndex);
   }
 
+
+  deleteItem(item: Item) {
+    console.log('delete item service: item -', item);
+    if ( this.itemList.filter(fitem => fitem.id === item.id )){
+      this.itemList.splice(this.itemList.findIndex(x => x.id === item.id), 1);
+    }
+    console.log( this.itemList );
+  }
+
   getItemType() {
     const item = { id: 0, name: '', flag: '', population: '' , area: ''};
     return item;
