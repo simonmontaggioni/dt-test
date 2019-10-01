@@ -13,6 +13,7 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { ProductsComponent } from './components/products/products.component';
 import { ProvidersComponent } from './components/providers/providers.component';
 import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ActionButtonsComponent } from './components/action-buttons/action-butto
     ItemDetailComponent,
     ProductsComponent,
     ProvidersComponent,
-    ActionButtonsComponent
+    ActionButtonsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

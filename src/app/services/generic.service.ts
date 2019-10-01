@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,10 @@ export class GenericService {
   itemList: any[];
   selectedItem: any;
   emptyItem: any;
+  messageService: MessageService;
 
   constructor(itemList: any[], emptyType: any) {
+    this.messageService = new MessageService();
     this.itemList = itemList;
     this.emptyItem =  emptyType;
   }

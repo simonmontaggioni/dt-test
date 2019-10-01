@@ -5,7 +5,8 @@
         <button type="button" class="btn btn-primary btn-block"
           ngbTooltip="Create a new element"
           [openDelay]="100" [closeDelay]="500"
-          (click)="setAction('create')">
+          (click)="setAction('create')"
+          [disabled]="false">
           Create
         </button>
       </div>

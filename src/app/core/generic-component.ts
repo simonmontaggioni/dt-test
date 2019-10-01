@@ -1,5 +1,6 @@
 import { GenericService } from '../services/generic.service';
 import { OnInit } from '@angular/core';
+import { MessageService } from '../services/message.service';
 
 export class GenericComponent implements OnInit {
 
@@ -36,6 +37,7 @@ export class GenericComponent implements OnInit {
     if (this.action === 'edit' || this.action === '') {
       this.updateSeletedItem(item);
     }
+
   }
 
   updateSeletedItem(item: any) {
