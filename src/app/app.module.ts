@@ -14,6 +14,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProvidersComponent } from './components/providers/providers.component';
 import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { StoresComponent } from './components/stores/stores.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     ProductsComponent,
     ProvidersComponent,
     ActionButtonsComponent,
-    MessagesComponent
+    MessagesComponent,
+    StoresComponent
   ],
   imports: [
     BrowserModule,
