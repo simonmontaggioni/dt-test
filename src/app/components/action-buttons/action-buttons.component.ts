@@ -19,11 +19,11 @@ export class ActionButtonsComponent implements OnInit {
     this.actionEvent.emit(action);
   }
 
-  public confirmDelete(action: string): void {
+  confirmDelete(action: string): void {
     this.setAction(action);
   }
 
-  public cancelDelete(dismissMethod: string): void {
+  cancelDelete(dismissMethod: string): void {
     // dismissMethod can be 'cancel', 'overlay', 'close', and 'timer'
     // ... do something
   }
