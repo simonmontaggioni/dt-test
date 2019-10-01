@@ -8,7 +8,7 @@ import { PRODUCT_LIST } from 'src/app//core/mock-product-list';
 export class ProductService  extends GenericService  {
 
   constructor() {
-    const emptyType = { name: null, flag: null,  area: null , population: null };
+    const emptyType = { name: null, price: null,  description: null};
     super(PRODUCT_LIST, emptyType);
   }
 }

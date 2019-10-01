@@ -1,6 +1,7 @@
 import { GenericService } from '../services/generic.service';
+import { OnInit } from '@angular/core';
 
-export class GenericComponent {
+export class GenericComponent implements OnInit {
 
 
   itemList: any[];
@@ -9,7 +10,14 @@ export class GenericComponent {
   action: string;
   emptyItem: any;
 
-  constructor(public itemService: GenericService) {  }
+  constructor(public itemService: GenericService, emptyItem: any) {  }
+
+  ngOnInit() {
+    this.itemType = this.itemService.getItemType();
+    this.itemList = this.itemService.getItemList();
+    this.selectedItem = this.itemService.getSelectedItem();
+    this.action = '';
+  }
 
   createItem(item: any) {
     this.itemService.addItem(item);
