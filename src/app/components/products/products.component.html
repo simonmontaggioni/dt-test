@@ -8,22 +8,7 @@
   </div>
 </div>
 <div class="container" *ngIf="action === ''">
-  <div class="row" style="padding-bottom: 30px">
-    <div class="col-8"></div>
-    <div class="col-4">
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2" role="group" aria-label="First group">
-          <button type="button" class="btn btn-primary btn-block" (click)="setAction('create')">Create</button>
-        </div>
-        <div class="btn-group mr-2" role="group" aria-label="Second group">
-          <button type="button" class="btn btn-secondary btn-block" (click)="setAction('edit')" [disabled]="!selectedItem.id">Edit </button>
-        </div>
-        <div class="btn-group mr-2" role="group" aria-label="Third group">
-          <button type="button" class="btn btn-danger btn-block"  (click)="setAction('delete')" [disabled]="!selectedItem.id">Delete</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-action-buttons [item]="selectedItem" (actionEvent)="setAction($event)"></app-action-buttons>
 </div>
 <div class="container">
   <div class="row">

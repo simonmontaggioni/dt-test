@@ -47,7 +47,7 @@ export class GenericService {
 
   deleteItem(item: any) {
     console.log('delete item service: item -', item);
-    if ( this.itemList.filter(fitem => fitem.id === item.id )){
+    if ( this.itemList.filter(fitem => fitem.id === item.id )) {
       this.itemList.splice(this.itemList.findIndex(x => x.id === item.id), 1);
     }
     console.log( this.itemList );

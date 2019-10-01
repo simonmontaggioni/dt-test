@@ -12,6 +12,7 @@ import { SelectionBarComponent } from './components/selection-bar/selection-bar.
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProvidersComponent } from './components/providers/providers.component';
+import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProvidersComponent } from './components/providers/providers.component';
     SelectionBarComponent,
     ItemDetailComponent,
     ProductsComponent,
-    ProvidersComponent
+    ProvidersComponent,
+    ActionButtonsComponent
   ],
   imports: [
     BrowserModule,
