@@ -9,10 +9,10 @@
           <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle >Select Type of Item</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem (click)='openItem("products")'>Products</button>
-              <button ngbDropdownItem (click)='openItem("providers")'>Providers</button>
-              <button ngbDropdownItem (click)='openItem("stores")'>Stores</button>
-              <button ngbDropdownItem (click)='openItem("inventories")'>Inventories</button>
+              <button ngbDropdownItem (click)='openItem("products")' [swal]="['Well!!', 'Product Selected', 'info']">Products</button>
+              <button ngbDropdownItem (click)='openItem("providers")' [swal]="['Well!!', 'Providers Selected', 'info']">Providers</button>
+              <button ngbDropdownItem (click)='openItem("stores")' [swal]="['Well!!', 'Stores Selected', 'info']">Stores</button>
+              <button ngbDropdownItem (click)='openItem("inventories")' [swal]="['Well!!', 'Inventories Selected', 'info']">Inventories</button>
             </div>
           </div>
         </div>

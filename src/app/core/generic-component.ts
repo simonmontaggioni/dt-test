@@ -1,6 +1,7 @@
 import { GenericService } from '../services/generic.service';
 import { OnInit } from '@angular/core';
 import { MessageService } from '../services/message.service';
+import swal from 'sweetalert2';
 
 export class GenericComponent implements OnInit {
 
@@ -10,6 +11,8 @@ export class GenericComponent implements OnInit {
   selectedItem: any;
   action: string;
   emptyItem: any;
+
+  swAlert = '';
 
   constructor(public itemService: GenericService, emptyItem: any) {  }
 
@@ -29,7 +32,7 @@ export class GenericComponent implements OnInit {
   }
 
   deleteItem(item: any) {
-    alert('Are you sure to delete item id: ' + item.id);
+    // alert('Are you sure to delete item id: ' + item.id);
     this.itemService.deleteItem(item);
   }
 

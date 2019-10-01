@@ -39,4 +39,12 @@ export class ItemDetailComponent implements OnInit {
     console.log(this.itemAttributes);
   }
 
+  confirmSave(action: string): void {
+    this.onItemSaved();
+  }
+
+  cancelSave(dismissMethod: string): void {
+    // this.onCancel();
+  }
+
 }

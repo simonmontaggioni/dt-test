@@ -22,7 +22,17 @@
       <button class="btn btn-danger btn-block" (click)="onCancel()" >Cancel</button>
     </div>
     <div class="col-md-6">
-      <button class="btn btn-primary btn-block" (click)="onSaveItem()">Save</button>
+      <button class="btn btn-primary btn-block"
+      [swal]="{
+        title: 'Are you sure?',
+        text: 'You can check once again!',
+        type: 'question',
+        showConfirmButton: true,
+        showCancelButton: true
+      }"
+      (confirm)="confirmSave()"
+      (cancel)="cancelSave()"
+      >Save</button>
     </div>
   </div>
 </div>

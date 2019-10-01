@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,9 @@ import { StoresComponent } from './components/stores/stores.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
