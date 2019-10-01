@@ -11,6 +11,6 @@ export class StoresComponent extends GenericComponent implements OnInit {
 
   constructor(public storeService: StoreService ) {
     // const emptyType = { name: null, price: null,  description: null};
-    super(storeService, { name: null, price: null,  description: null});
+    super(storeService, { name: null, code: null,  location: null, manager: null});
   }
 }
