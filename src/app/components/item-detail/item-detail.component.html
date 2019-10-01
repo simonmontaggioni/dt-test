@@ -1,4 +1,4 @@
-<div class="container card" >
+<div class="container card shadow" >
   <div class="row ">
     <div class="col" style="padding: 30px;">
         <div class="form-row">
@@ -11,13 +11,13 @@
           <ng-container  *ngFor="let attribute of itemAttributes; index as i">
             <div class="col-md-6 mb-3" *ngIf="attribute !== 'id'">
               <label for="validationDefault01">{{ attribute }}</label>
-              <input type="text" class="form-control" id="validationDefault01" placeholder="" [(ngModel)]="item[attribute]">
+              <input type="text" class="form-control" id="validationDefault01" placeholder="{{ attribute }}" [(ngModel)]="item[attribute]" required>
             </div>
           </ng-container>
         </div>
     </div>
   </div>
-  <div class="form-row">
+  <div class="form-row" style='padding-bottom: 10px'>
     <div class="col-md-6">
       <button class="btn btn-danger btn-block" (click)="onCancel()" >Cancel</button>
     </div>

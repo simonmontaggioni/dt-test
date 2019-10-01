@@ -1,11 +1,9 @@
 
-<div class="container"  style="padding-bottom: 30px">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-8" *ngIf="action === 'create' || (action === 'edit' && selectedItem.id) ">
+<div class="container"  >
+    <div class="row" style="margin-bottom: 30px">
+      <div class="col-12" *ngIf="action === 'create' || (action === 'edit' && selectedItem.id) ">
           <app-item-detail [item]="selectedItem" (cancelEvent)="cancelOperation($event)" (savedItemEvent)="saveItem($event)"></app-item-detail>
       </div>
-    </div>
   </div>
   <div class="container" *ngIf="action === ''">
     <app-action-buttons [item]="selectedItem" (actionEvent)="setAction($event)"></app-action-buttons>

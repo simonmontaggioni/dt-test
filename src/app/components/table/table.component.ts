@@ -16,6 +16,7 @@ export class TableComponent implements OnInit {
   collectionSize: number;
 
   selectedItem: any;
+  selectedItemId = '';
   itemAttributes: any[];
 
   constructor() {
@@ -29,6 +30,9 @@ export class TableComponent implements OnInit {
     console.log( 'items list', this.itemList);
     const item = this.itemType;
     this.itemAttributes = Object.keys(item);
+    if ( this.selectedItem ) {
+      this.selectedItemId = 'init';
+    }
   }
 
   getItemList(): any[] {
@@ -45,6 +49,7 @@ export class TableComponent implements OnInit {
 
   onSelect(item: any): void {
     this.selectedItem = item;
+    // this.selectedItemId = this.selectedItem.id;
     this.selectedItemEvent.emit(this.selectedItem);
     console.log('selected item: ', this.selectedItem);
   }

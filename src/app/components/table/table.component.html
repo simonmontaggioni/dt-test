@@ -1,36 +1,34 @@
 
 
-<table class="table table-striped" >
+<table class="table table-striped shadow">
   <thead>
-    <tr>
-      <th> Select </th>
-
-      <th *ngFor="let itemAttribute of itemAttributes; index as i">
-        {{ itemAttribute }}
-      </th>
+    <tr class="shadow"style="height: 80px">
+      <th class="text-center align-middle"> SELECT</th>
+      <th *ngFor="let itemAttribute of itemAttributes; index as i" class="text-center align-middle">{{ itemAttribute | uppercase }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of getItemList(); index as i">
+    <tr *ngFor="let item of getItemList(); index as i" class="text-center align-middle">
       <td>
         <div style="height: auto;">
           <button class="btn btn-outline-success" id={{item.id}}
-           (click)="onSelect(item)">
+            [class.active]="item.id === (selectedItem ? selectedItem.id : false)"
+            (click)="onSelect(item)"
+            style="border-radius: 50% 50%">
             <i class="fa fa-check-circle"><></i>
           </button>
            <!-- <input type="radio" name="a" id=""> -->
         </div>
       </td>
-      <td *ngFor="let atribute of itemAttributes; index as a">{{item[atribute]}}<td>
+      <td *ngFor="let atribute of itemAttributes; index as a" class="align-middle">{{item[atribute]}}<td>
     </tr>
   </tbody>
 </table>
 
 <div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
-  </ngb-pagination>
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" class=""></ngb-pagination>
 
-  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+  <select class="custom-select shadow rounded" style="width: auto" [(ngModel)]="pageSize">
     <option [ngValue]="2">2 items per page</option>
     <option [ngValue]="4">4 items per page</option>
     <option [ngValue]="6">6 items per page</option>
