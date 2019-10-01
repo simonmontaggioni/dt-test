@@ -13,7 +13,13 @@
   <tbody>
     <tr *ngFor="let item of getItemList(); index as i">
       <td>
-          <input type="radio" name="" id="item" [class.selected]="item === selectedItem" (click)="onSelect(item)">
+        <div style="height: auto;">
+          <button class="btn btn-outline-success" id={{item.id}}
+           (click)="onSelect(item)">
+            <i class="fa fa-check-circle"><></i>
+          </button>
+           <!-- <input type="radio" name="a" id=""> -->
+        </div>
       </td>
       <td *ngFor="let atribute of itemAttributes; index as a">{{item[atribute]}}<td>
     </tr>
