@@ -8,9 +8,8 @@ import { PROVIDERS_LIST } from 'src/app/core/mock-providers-lis';
 export class ProviderService extends GenericService {
 
   constructor() {
-    super();
-    this.itemList = PROVIDERS_LIST;
-    this.emptyItem =  { name: null, type: null,  code: null , country: null };
+    const emptyType =  { name: null, type: null,  code: null , country: null };
+    super(PROVIDERS_LIST, emptyType);
   }
 
 }

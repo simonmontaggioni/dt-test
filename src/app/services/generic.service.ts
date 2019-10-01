@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ITEM_LIST } from 'src/app/core/mock-item-list';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +9,9 @@ export class GenericService {
   selectedItem: any;
   emptyItem: any;
 
-  constructor() {
-    this.itemList = ITEM_LIST;
-    this.emptyItem =  { name: null, flag: null,  population: null , area: null };
+  constructor(itemList: any[], emptyType: any) {
+    this.itemList = itemList;
+    this.emptyItem =  emptyType;
   }
 
   getItemList() {

@@ -1,7 +1,7 @@
-import { Item } from './item';
+import { Product } from './product';
 
 
-export const ITEM_LIST: Item[] = [
+export const PRODUCT_LIST: Product[] = [
   {
     id: 1,
     name: 'Russia',
